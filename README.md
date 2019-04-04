@@ -1,10 +1,4 @@
-# redisNote
 
-<br> learn form redis in action (Redis 实战) 
-<br>  redis 使用内存存储(in memory)的非关系数据库
-<br>  MongoDB 使用硬盘存储(on disk) 的非关系文档存储 
-
-<br>--------------------------------------------------------
 <br> redis 官网命令 https://redis.io/commands
 <br> redis 常用命令 flushall 删除数据库所有的数据 clear  清屏 
 <br>--------------------------------------------------------
@@ -29,8 +23,11 @@
 <br> 2.如果 offset >= key.value.length : offset 到 value.length 的之前的位置会被填充成null,从offset之后增加数据value
 <br> 3.offset不能为负数
 
-
-
-
-
+<br> list(链表 linked-list): 一个列表结果可以有序地存储多个字符串(有序)
+<br> list的常用命令:
+<br> ------ RPUSH(LPUSH) key value1 value2...将给定值推入列表的右(左)端
+<br> ------ LPOP(RPOP) key 从列表的左(右)端弹出一个值,并返回被弹出的值
+<br> ------ LRANGE key start stop  获取列表在给定范围上的所有值包括start跟end的值 如果start < end 返回empty list or set;
+<br> ------ LINDEX key index 获取列表给定位置上的单个元素 1.如果index是负数就从后面开始算起 2.不存在的数值返回nil
+<br> ------ LTRIM key-name start end 
 
