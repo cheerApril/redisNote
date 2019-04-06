@@ -31,3 +31,25 @@
 <br> ------ LINDEX key index 获取列表给定位置上的单个元素 1.如果index是负数就从后面开始算起 2.不存在的数值返回nil
 <br> ------ LTRIM key-name start end 
 
+<br> zet(无序集合) 以无序的方式来存储多个各不相同的元素
+<br> ------ SADD key-name item [item] 将一个或多个元素添加到集合里面,并返回被添加元素当中原本并不存在与集合里面的元素数量
+<br> ------ SREM key-name item [item] 从集合里面一处一个或多个元素,并返回被移除元素的数量
+<br> ------ SISMEMBER key-name item 检查元素item是否存在与集合key-name里 (判断的 set[key] === value 如果是true的话就是存在返回1,否则返回0)
+<br> ------ SADD key-name item [item] 将一个或多个元素添加到集合里面,并返回被添加元素当中原本并不存在与集合里面的元素数量
+<br> ------ SCARD key-name 返回集合包含的元素的数量
+<br> ------ SMEMBERS key-name 返回集合包含的所有的元素
+<br> ------ SRANDMEMBER key-name [name] 从集合里面随机地返回一个或多个元素.当count为正数时,命令返回的随机元素不会重复;当count为负数时,命令返回的随机元素可能会出现重覆. (集合不存在的时候返回empty list or set || 如果length > set.length 返回全部);
+<br> ------ SPOP key-name[count] 随机地移除集合中的一个或count个元素,并返回被移除的元素(如果count < 0会报错)
+<br> ------ SMOVE source-key dest-key item 如果集合source-key包含元素item,那么从集合source-key里面移除元素item，并将元素item添加到集合dest-key中;如果item被成功移除,那么命令返回1,否则返回0. (返回的判断标志是元素item是否被移除了)
+<br> 1.如果dest-key 不存在的话,会创建的value item的新的集合set 
+<br> 2.如果source-key 不存在返回0
+
+
+
+
+
+
+
+
+
+
