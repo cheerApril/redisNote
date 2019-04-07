@@ -51,6 +51,24 @@
 <br> ------ SUNION key-name [key-name] 返回那些至少存在与一个集合中的元素(数学上的并集运算===全返回)
 <br> ------ SUNIONSTORE key-name [key-name] 将那些至少存在与一个集合中的元素(数学上的并集运算===全返回)存储在dest-key键里面
 
+<br> hash(散列表) 如果一个hash表的数据,使用set设置的同样的key的话,hash相同key的值会改变成string类型,但是相反操作不行
+<br> ------ HSET key field value 在散列里面关联起给定的键值对
+<br> ------ HGET key field 获取指定散列键的值
+<br> ------ HGETALL key 获取散列包含的所有键值对
+<br> ------ HDEL key field [..field] 如果给定键存在与散列里面,那么移除这个键
+<br> ------ HMGET key-name key [key...] 从散列里面获取一个或多个值
+<br> ------ HMSET key-name key value [key vakue...] 为散列里面的一个或多个键设置值
+<br> ------ HLEN key-name 返回散列包含的键值对数量
+
+
+
+
+
+
+
+
+
+
 
 
 
