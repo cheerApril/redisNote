@@ -44,8 +44,12 @@
 <br> 1.如果dest-key 不存在的话,会创建的value item的新的集合set 
 <br> 2.如果source-key 不存在返回0
 
-
-
+<br> ------ SDIFF key-name [key-name] 返回那些存在与第一个集合,但不存在与其他集合中的元素(数学上的差集运算)[如果不存在的话就跟空集做相关操作]
+<br> ------ SDIFFSTORE dest-key key-name [key-name] 将那些存在与第一个集合,但不存在与其他集合中的元素(数学上的差集运算)存储到dest-key键里面(如果dest-key里面已经存在数据的话,无论如何都会覆盖,重新赋值)
+<br> ------ SINTER key-name [key-name] 返回那些同时存在与所有集合中的元素(交集运算)
+<br> ------ SINTERSTORE dest-key key-name [key-name] j将那些同时存在与所有集合中的元素(交集运算)存储在dest-key(跟上面一样对于已存在的key会重新赋值)
+<br> ------ SUNION key-name [key-name] 返回那些至少存在与一个集合中的元素(数学上的并集运算===全返回)
+<br> ------ SUNIONSTORE key-name [key-name] 将那些至少存在与一个集合中的元素(数学上的并集运算===全返回)存储在dest-key键里面
 
 
 
