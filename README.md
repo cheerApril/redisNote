@@ -59,6 +59,15 @@
 <br> ------ HMGET key-name key [key...] 从散列里面获取一个或多个值
 <br> ------ HMSET key-name key value [key vakue...] 为散列里面的一个或多个键设置值
 <br> ------ HLEN key-name 返回散列包含的键值对数量
+<br> ------ HEXISTS key-name field  检查给定键是否存在与散列中
+<br> ------ HKEYS key-name  返回散列包含的所有键
+<br> ------ HVALS key-name  返回散列包含的所有值
+<br> ------ HINCRBY key-name field increment 将键key存储的值加上整数increment(如果key活着field 不存在创建一个value为0 的新对象做创建操作)(如果原来的value是浮点数不能进行操作,但是下面的可以进行整数操作)
+<br> ------ HINCRBYFLOAT key-name field increment 将键key存储的值加上浮点x数increment(如果key活着field 不存在创建一个value为0 的新对象做创建操作)
+
+
+
+
 
 
 
