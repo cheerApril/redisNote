@@ -65,6 +65,27 @@
 <br> ------ HINCRBY key-name field increment 将键key存储的值加上整数increment(如果key活着field 不存在创建一个value为0 的新对象做创建操作)(如果原来的value是浮点数不能进行操作,但是下面的可以进行整数操作)
 <br> ------ HINCRBYFLOAT key-name field increment 将键key存储的值加上浮点x数increment(如果key活着field 不存在创建一个value为0 的新对象做创建操作)
 
+<br> 有序集合 zset
+<br> ------ ZADD key-name [options] score member [score member....] 将相关的数值添加到有序集合里面
+ZADD options (Redis 3.0.2 or greater)
+ZADD supports a list of options, specified after the name of the key and before the first score argument. Options are:
+
+XX: Only update elements that already exist. Never add elements.
+NX: Don't update already existing elements. Always add new elements.
+CH: Modify the return value from the number of new elements added, to the total number of elements changed (CH is an abbreviation of changed). Changed elements are new elements added and elements already existing for which the score was updated. So elements specified in the command line having the same score as they had in the past are not counted. Note: normally the return value of ZADD only counts the number of new elements added.
+INCR: When this option is specified ZADD acts like ZINCRBY. Only one score-element pair can be specified in this mode.
+<br> ------ ZREM key-name member [..member] 从有序集合里面移除相关的member，并返回移除成员的数量
+<br> ------ ZCARD key-name 返回有序集合包含的成员数量 
+<br> ------ ZINCRBY key-name increment member 将member成员的分值加上increment(同样的不存在的话会创建value为0的新的member,然后进行操作)
+<br> ------ ZCOUNT key-name min max 返回score介于min和max之间的member数量(min和max都可以为0,如果max < min 永远返回的是0)
+<br> ------ ZRANK key-name member 返回成员member在有序集合中的排名 (没有返回nil)
+<br> ------ ZSCORE key-name member 返回成员member在有序集合中的分值 (没有返回nil)
+<br> ------ ZRANGE key-name start stop [withscores] 返回有序集合中排名介于start和stop之间的成员,如果给定了可选的withscores选项,那么命令会将成员的分值也一并返回(如果start< stop 返回empty set or list )
+
+
+
+
+
 
 
 
