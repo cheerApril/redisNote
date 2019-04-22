@@ -74,13 +74,22 @@ XX: Only update elements that already exist. Never add elements.
 NX: Don't update already existing elements. Always add new elements.
 CH: Modify the return value from the number of new elements added, to the total number of elements changed (CH is an abbreviation of changed). Changed elements are new elements added and elements already existing for which the score was updated. So elements specified in the command line having the same score as they had in the past are not counted. Note: normally the return value of ZADD only counts the number of new elements added.
 INCR: When this option is specified ZADD acts like ZINCRBY. Only one score-element pair can be specified in this mode.
-<br> ------ ZREM key-name member [..member] 从有序集合里面移除相关的member，并返回移除成员的数量
+<br> ------ ZREM key-name member [..member] 从有序集合里面移除相关的member，并返回移除成员的数量 
 <br> ------ ZCARD key-name 返回有序集合包含的成员数量 
 <br> ------ ZINCRBY key-name increment member 将member成员的分值加上increment(同样的不存在的话会创建value为0的新的member,然后进行操作)
 <br> ------ ZCOUNT key-name min max 返回score介于min和max之间的member数量(min和max都可以为0,如果max < min 永远返回的是0)
-<br> ------ ZRANK key-name member 返回成员member在有序集合中的排名 (没有返回nil)
+<br> ------ ZRANK key-name member 返回成员member在有序集合中的排名 (没有返回nil) (从0开始排序哦)
 <br> ------ ZSCORE key-name member 返回成员member在有序集合中的分值 (没有返回nil)
 <br> ------ ZRANGE key-name start stop [withscores] 返回有序集合中排名介于start和stop之间的成员,如果给定了可选的withscores选项,那么命令会将成员的分值也一并返回(如果start< stop 返回empty set or list )
+<br> ------ ZREVRANK key-name  member 返回有序集合里成员member的排名,成员按照分值从大到小排列(rev--revrse) 跟之前的排序反向排序
+<br> ------ ZREVRANGE key-name start stop [withscores] 返回有序集合给定排名范围内成员,成员按照分值从大到少排列.
+<br> ------ ZRANGEBYSCORE key-name min max [withscores] [limit offset count] 获取有序集合中分值介于min和max之间的所有成员,并按照分值从大到小的顺序来返回他们
+<br> ------ ZREMRANGEBYRANK key-name start stop 移除有序集合中排名介于start和stop之间的所有成员
+<br> ------ ZREMRANGEBYSCORE key-name min max 移除有序集合中分值排名介于start和stop之间的所有成员
+<br> ------ ZINTERSTORE destination numkeys key [key ...] [WEIGHTS weight [weight ...]] [AGGREGATE SUM|MIN|MAX]
+<br> ------ ZUNIONSTORE destination numkeys key [key ...] [WEIGHTS weight [weight ...]] [AGGREGATE SUM|MIN|MAX]
+
+
 
 
 
