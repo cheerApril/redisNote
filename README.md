@@ -1,6 +1,7 @@
 
 <br> redis 官网命令 https://redis.io/commands
 <br> redis 常用命令 flushall 删除数据库所有的数据 clear  清屏 
+<br> redis 相关的操作 设置 , 范围查找, INCR更新, 删除
 <br>--------------------------------------------------------
 
 <br> 这个版本的是3.0之前的版本,暂时支持的数类型是string, list, set(不重覆的数组), hash(key-value), zset(有序set)
