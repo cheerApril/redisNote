@@ -95,6 +95,7 @@ INCR: When this option is specified ZADD acts like ZINCRBY. Only one score-eleme
 <br> --eg: zinterstore gem 2(这个数只能大于等于后面key的数量不能少于) cheer april weights 1 2 (weights 后面的权重对应于cheer跟April这两个有序集合而且你有多少个key 就要设置多少个) aggregate SUM;(可以跟SET数据类型做交集操作,set里面的value默认为1)
 <br> ------ ZUNIONSTORE destination numkeys key [key ...] [WEIGHTS weights [weights ...]] [AGGREGATE SUM|MIN|MAX] 对给定的有序集合执行累死你于集合的并集运算
 
+<br> 发布与订阅
 
 
 
