@@ -91,8 +91,9 @@ INCR: When this option is specified ZADD acts like ZINCRBY. Only one score-eleme
 <br> ------ ZRANGEBYSCORE key-name min max [withscores] [limit offset count] 获取有序集合中分值介于min和max之间的所有成员,并按照分值从大到小的顺序来返回他们
 <br> ------ ZREMRANGEBYRANK key-name start stop 移除有序集合中排名介于start和stop之间的所有成员
 <br> ------ ZREMRANGEBYSCORE key-name min max 移除有序集合中分值排名介于start和stop之间的所有成员
-<br> ------ ZINTERSTORE destination numkeys key [key ...] [WEIGHTS weight [weight ...]] [AGGREGATE SUM|MIN|MAX]
-<br> ------ ZUNIONSTORE destination numkeys key [key ...] [WEIGHTS weight [weight ...]] [AGGREGATE SUM|MIN|MAX]
+<br> ------ ZINTERSTORE destination numkeys key [key ...] [WEIGHTS weights [weights ...]] [AGGREGATE SUM|MIN|MAX]
+<br> --eg: zinterstore gem 2(这个数只能大于等于后面key的数量不能少于) cheer april weights 1 2 (weights 后面的权重对应于cheer跟April这两个有序集合而且你有多少个key 就要设置多少个) aggregate SUM;
+<br> ------ ZUNIONSTORE destination numkeys key [key ...] [WEIGHTS weights [weights ...]] [AGGREGATE SUM|MIN|MAX]
 
 
 
