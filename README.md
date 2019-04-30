@@ -31,6 +31,10 @@
 <br> ------ LRANGE key start stop  获取列表在给定范围上的所有值包括start跟end的值 如果start < end 返回empty list or set;
 <br> ------ LINDEX key index 获取列表给定位置上的单个元素 1.如果index是负数就从后面开始算起 2.不存在的数值返回nil
 <br> ------ LTRIM key-name start end 
+<br> ------ BLPOP key-name [key-name..] timeout 从第一个非空列表中弹出位于最左端的元素或者在timeout秒之内阻塞并等待可弹出的元素出现(如果不存在元素会等待 timeout 秒 返回nil跟等待的时间)
+<br> ------ BRPOP key-name [key-name..] timeout 从第一个非空列表中弹出位于最右端的元素或者在timeout秒之内阻塞并等待可弹出的元素出现(如果不存在元素会等待 timeout 秒 返回nil跟等待的时间)
+<br> ------ RPOPLPUSH source destination 从source-key 列表中弹出位于最右端的元素,然后将这个元素推入dest-key列表的最最左端,并返回这个推入的元素(如果SOURCE没有就不会推入任何数据)
+<br> ------ BRPOPLPUSH source destination timeout 从source-key 列表中弹出位于最右端的元素,然后将这个元素推入dest-key列表的最最左端,并返回这个推入的元素，如果source为空,那么等待timeout秒之后返回nil(如果SOURCE没有就不会推入任何数据)
 
 <br> zet(无序集合) 以无序的方式来存储多个各不相同的元素
 <br> ------ SADD key-name item [item] 将一个或多个元素添加到集合里面,并返回被添加元素当中原本并不存在与集合里面的元素数量
