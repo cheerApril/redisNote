@@ -126,9 +126,8 @@ INCR: When this option is specified ZADD acts like ZINCRBY. Only one score-eleme
 <br> ----- PEXPRIE key-name milliseconds 让给定键在指定的毫秒数之后过期
 <br> ----- PEXPIREAT key-name timestamo-milliseconds 将一个毫秒级精度的UNINX时间戳为给定键的过期时间
 
-
-
-
+<br>数据安全
+<br>Redis提供两种不同持久化方法来讲数据存储到硬盘里面,一种是快照(snapshoting)它可以将存在在某一时刻的所有数据都写入硬盘里面.另一种方法叫只追加文件(AOF --append-only file) 它会在执行写命令时,将被执行的写命令复制到硬盘里面.
 
 
 
