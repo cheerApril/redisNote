@@ -93,9 +93,22 @@ INCR: When this option is specified ZADD acts like ZINCRBY. Only one score-eleme
 <br> ------ ZREMRANGEBYSCORE key-name min max 移除有序集合中分值排名介于start和stop之间的所有成员
 <br> ------ ZINTERSTORE destination numkeys key [key ...] [WEIGHTS weights [weights ...]] [AGGREGATE SUM|MIN|MAX] 对给定的有序集合执行类似于集合的交集运算
 <br> --eg: zinterstore gem 2(这个数只能大于等于后面key的数量不能少于) cheer april weights 1 2 (weights 后面的权重对应于cheer跟April这两个有序集合而且你有多少个key 就要设置多少个) aggregate SUM;(可以跟SET数据类型做交集操作,set里面的value默认为1)
-<br> ------ ZUNIONSTORE destination numkeys key [key ...] [WEIGHTS weights [weights ...]] [AGGREGATE SUM|MIN|MAX] 对给定的有序集合执行累死你于集合的并集运算
+<br> ------ ZUNIONSTORE destination numkeys key [key ...] [WEIGHTS weights [weights ...]] [AGGREGATE SUM|MIN|MAX] 对给定的有序集合执行类似于集合的并集运算
 
 <br> 发布与订阅
+<br> ------ subscribe channel [channel...] 订阅给定的一个或多个频道
+<br> ------ unsubscribe [channel channel...] 退订给定的一个或多个频道,如果执行时诶呦给定任何频道,那么退订所有频道
+<br> ------ publish channel message 向给定频道发送消息
+<br> ------ psubscribe pattern [pattern]订阅给定模式相匹配的所有频道 
+<br>持的模式(patterns)有:
+<br>h?llo subscribes to hello, hallo and hxllo
+<br>h*llo subscribes to hllo and heeeello
+<br>h[ae]llo subscribes to hello and hallo, but not hillo
+<br>如果想输入普通的字符，可以在前面添加\
+<br> ------ punsubscribe [pattern [pattern..] --退订给定的模式,如果执行时没有给定任何模式,那么退订所有模式
+
+
+
 
 
 
