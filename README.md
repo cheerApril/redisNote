@@ -100,12 +100,22 @@ INCR: When this option is specified ZADD acts like ZINCRBY. Only one score-eleme
 <br> ------ unsubscribe [channel channel...] 退订给定的一个或多个频道,如果执行时诶呦给定任何频道,那么退订所有频道
 <br> ------ publish channel message 向给定频道发送消息
 <br> ------ psubscribe pattern [pattern]订阅给定模式相匹配的所有频道 
-<br>持的模式(patterns)有:
+<br>支持的模式(patterns)有:
 <br>h?llo subscribes to hello, hallo and hxllo
 <br>h*llo subscribes to hllo and heeeello
 <br>h[ae]llo subscribes to hello and hallo, but not hillo
 <br>如果想输入普通的字符，可以在前面添加\
 <br> ------ punsubscribe [pattern [pattern..] --退订给定的模式,如果执行时没有给定任何模式,那么退订所有模式
+
+<br>sort 命令
+<br> ------ sort key [by pattern] [LIMIT OFFSET COUNT] [GET pattern] [ASC|DESC] [ALPHA] STORE destination
+<br> ------返回或存储key的list、 set 或sorted set 中的元素。默认是按照数值类型排序的，并且按照两个元素的双精度浮点数类型值进行比较
+<br> ------ msyql order by可以当做一样理解,但是肯定有一些不同的
+<br> ------ LIMIT是命令 offset 跟 count 是从offset开始返回count个元素的意思 
+<br> ------ ASC 升序 DESC 降序 
+<br> ------ ALPHA 排序的数据类型是字符串值并且需要按照字典顺序排序
+<br> ------ STORE destination 排序之后的数据作为列表保存在destination_key 里面(为了正确实现这种模式，很重要的一点是防止多个客户端同时重建缓存。 此时需要使用一些锁（具体的使用 SETNX)
+<br> ------- 在GET BY 里面使用hash的数据类型 SORT mylist BY weight_*->fieldname GET object_*->fieldname 字符串 -> 用于区分key名称和哈希属性的名称。key被替换为上面所记录的，结果key中存储的hash用于获取特定hash的属性
 
 
 
