@@ -117,6 +117,15 @@ INCR: When this option is specified ZADD acts like ZINCRBY. Only one score-eleme
 <br> ------ STORE destination 排序之后的数据作为列表保存在destination_key 里面(为了正确实现这种模式，很重要的一点是防止多个客户端同时重建缓存。 此时需要使用一些锁（具体的使用 SETNX)
 <br> ------- 在GET BY 里面使用hash的数据类型 SORT mylist BY weight_*->fieldname GET object_*->fieldname 字符串 -> 用于区分key名称和哈希属性的名称。key被替换为上面所记录的，结果key中存储的hash用于获取特定hash的属性
 
+<br>用来处理过期时间的Redis命令
+<br> ----- PERSIST key-name -- 移除键的过期时间 
+<br> ----- TTL key-name 查看给定键距离过期还有多少秒 (如果key不存在或者已过期，返回 -2 如果key存在并且没有设置过期时间（永久有效），返回 -1)
+<br> ----- EXPIRE key-name seconds 让给定键在指定的秒数之后过期 (1 如果成功设置过期时间	0 如果key不存在或者不能设置过期时间。)
+<br> ----- EXPRIEAT key-name timestamp 将给定键的过期时间设置给定的UNINX时间戳
+<br> ----- PTTL key-name 查看给定键距离过期时间还有多少毫秒
+<br> ----- PEXPRIE key-name milliseconds 让给定键在指定的毫秒数之后过期
+<br> ----- PEXPIREAT key-name timestamo-milliseconds 将一个毫秒级精度的UNINX时间戳为给定键的过期时间
+
 
 
 
